@@ -13,6 +13,12 @@ resources/views/includes/accountDetails.blade.php
 
 resources/views/includes/switchAccount.blade.php
 
+resources/views/includes/nav.blade.php
+
+resources/views/includes/bootstrap/bootstrap-styles.blade.php
+
+resources/views/includes/bootstrap/bootstrap-scripts.blade.php
+
 app/Http/Controllers/AuthController.php
 
 app/Http/Middleware/CustomAuthMiddleware.php
