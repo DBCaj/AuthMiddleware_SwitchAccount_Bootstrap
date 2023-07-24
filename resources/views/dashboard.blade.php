@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dashboard</title>
+  
+  @include('includes.bootstrap.bootstrap-styles')
 </head>
 <body>
-  <a href="{{ url('/logout') }}" onclick="return confirm('Are you sure you want to sign out?')">Log out</a>
-  <br>
+  @include('includes.nav')
   
-  @include('includes.accountDetails')
-  @include('includes.switchAccount')
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        @include('includes.switchAccount')
+      </div>
+      <div class="col-6">
+        @include('includes.accountDetails')
+      </div>
+    </div>
+  </div>
+  
+  @include('includes.bootstrap.bootstrap-scripts')
 </body>
 </html>

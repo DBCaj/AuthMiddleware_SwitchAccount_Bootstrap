@@ -1,26 +1,33 @@
 <div>
-  <form action="{{ route('login.auth') }}" method="POST">
-    @csrf
-    
-    @error('invalid')
-      <div style="background-color:#ffc2c2; padding:8px; margin-bottom:5px; border-radius:4px">{{ $message }}</div>
-    @enderror
-    
-    <div>
-      <label for="email">Email:</label>
-      <br>
-      <input type="email" name="email" autofocus required value="{{ old('email') }}">
+  <div class="card">
+    <div class="card-header">
+      Login
     </div>
-    <br>
-    <div>
-      <label for="password">Password:</label>
-      <br>
-      <input type="password" name="password" required>
+    <div class="card-body">
+      <form action="{{ route('login.auth') }}" method="POST">
+        @csrf
+        
+        @error('invalid')
+          <div class="alert alert-danger" role="alert">
+            {{ $message }}
+          </div>
+        @enderror
+        
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <br>
+          <input class="form-control" type="email" name="email" autofocus required value="{{ old('email') }}">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <br>
+          <input class="form-control" type="password" name="password" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-danger" type="reset">Clear</button>
+          <button class="btn btn-success" type="submit">Submit</button>
+        </div>
+      </form>
     </div>
-    <br>
-    <div>
-      <button type="reset" style="background-color:red; color:white; padding:5px">Clear</button>
-      <button type="submit" style="background-color:green; color:white; padding:5px">Submit</button>
-    </div>
-  </form>
+  </div>
 </div>

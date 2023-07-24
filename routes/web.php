@@ -16,7 +16,6 @@ Route::controller(AuthController::class)->group(function() {
 //////////// auth middleware - start ////////////
 Route::middleware('custom_auth')->controller(AuthController::class)->group(function() {
   Route::get('/dashboard', 'dashboard')->name('dashboard');
-  Route::get('/switch/{userId}', 'switchAccount')->name('switch.account');
+  Route::get('/switch', 'switchAccount')->name('switch.account');
 });
 //////////// auth middleware - end ////////////
-

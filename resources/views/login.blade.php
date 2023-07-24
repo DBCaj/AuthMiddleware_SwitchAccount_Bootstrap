@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Login</title>
+  @include('includes.bootstrap.bootstrap-styles')
 </head>
 <body>
-  <h1>Login</h1>
-  <hr><br>
-
-  @include('includes.loginForm') 
+  <div class="container">
+    @include('includes.loginForm') 
+  </div>
+  
+  @include('includes.bootstrap.bootstrap-scripts')
 </body>
 </html>

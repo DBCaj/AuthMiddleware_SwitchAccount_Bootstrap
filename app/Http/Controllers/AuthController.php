@@ -52,11 +52,11 @@ class AuthController extends Controller
     }
     
     
-    public function switchAccount(Request $req, $userId)
+    public function switchAccount(Request $req)
     {
       if(Auth::user()->isAdmin())
       {
-        $user = User::findOrFail($userId);
+        $user = User::findOrFail($req->input('userId'));
         Auth::login($user);
         return redirect()->intended('/dashboard');
       }
