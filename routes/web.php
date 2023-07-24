@@ -1,0 +1,22 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
+
+////////////// login logout - start /////////////
+Route::controller(AuthController::class)->group(function() {
+  Route::get('/', 'login')->name('login.form');
+  Route::post('/login-auth', 'loginAuth')->name('login.auth');
+  Route::get('/logout', 'logout')->name('logout');
+});
+////////////// login logout - end //////////////
+
+
+//////////// auth middleware - start ////////////
+Route::middleware('custom_auth')->controller(AuthController::class)->group(function() {
+  Route::get('/dashboard', 'dashboard')->name('dashboard');
+  Route::get('/switch/{userId}', 'switchAccount')->name('switch.account');
+});
+//////////// auth middleware - end ////////////
+
