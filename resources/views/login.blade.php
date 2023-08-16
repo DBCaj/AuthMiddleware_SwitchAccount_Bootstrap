@@ -8,8 +8,18 @@
   @include('includes.bootstrap.bootstrap-styles')
 </head>
 <body>
+  @production
   <div class="container">
     @include('includes.loginForm') 
+  </div>
+  @endproduction
+
+  <div class="container">
+    <div class="row justify-content-center"> 
+      <div class="col-md-8">
+        @include('includes.loginForm') 
+      </div>
+    </div>
   </div>
   
   @include('includes.bootstrap.bootstrap-scripts')

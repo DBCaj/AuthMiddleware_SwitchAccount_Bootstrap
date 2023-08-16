@@ -1,11 +1,10 @@
 <div>
-  <div class="card">
+  <div class="card" style="max-width: 650px; margin-top: 20px;">
     <div class="card-header">
-      <h3 class="text-georgia">Register Form</h3>
-    </div>
-    
+      <h3 class="text-georgia text-center">Register Form</h3>
+    </div>  
+     
     <div class="card-body">
-      
       @if(Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
           {{ Session::get('success') }}
@@ -59,6 +58,7 @@
             <span style="color:red">{{ $message }}</span>
           @enderror
         </div>
+        <br>
         <div class="form-group">
           <button type="reset" class="btn btn-danger" onclick="return confirm('Are you sure you want to clear all fields?')">Clear</button>
           <button type="submit" class="btn btn-success" onclick="return confirm('Are you sure you want to submit?')">

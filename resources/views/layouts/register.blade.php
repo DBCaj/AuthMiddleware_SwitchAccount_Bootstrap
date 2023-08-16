@@ -9,7 +9,11 @@
 </head>
 <body>
   <div class="container">
-    <x-register-component />
+    <div class="row justify-content-center"> 
+      <div class="col-md-8">
+        <x-register-component />
+      </div>
+    </div>
   </div>
   
   @includeIf('includes.bootstrap.bootstrap-scripts')

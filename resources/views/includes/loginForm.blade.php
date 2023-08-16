@@ -1,5 +1,5 @@
 <div>
-  <div class="card">
+  <div class="card" style="max-width: 650px; margin-top: 20px;">
     <div class="card-header">
       Login
     </div>
@@ -23,12 +23,13 @@
           <br>
           <input class="form-control" type="password" name="password" required>
         </div>
+        <br>
         <div class="form-group">
           <button class="btn btn-danger" type="reset">Clear</button>
           <button class="btn btn-success" type="submit">Submit</button>
         </div>
         <div class="form-group">
-          <a class="btn btn-primary" href="{{ route('register.form') }}" role="button">Create New Account</a>
+          <a class="btn btn-link" href="{{ route('register.form') }}">Create New Account</a>
         </div>
       </form>
     </div>
