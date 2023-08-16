@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Http\Requests\UserValidationRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\User;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
 
 class AuthController extends Controller
 {
@@ -62,4 +66,28 @@ class AuthController extends Controller
       }
       abort(403, 'UNAUTHORIZED ACTION');
     }
+
+
+  public function register(Request $req)
+  {
+    $validator = Validator::make($req->all(), (new UserValidationRequest)->rules());
+    
+    if($validator->fails())
+    {
+      return redirect()->back()
+      ->withErrors($validator)
+      ->withInput();
+    }
+    
+    User::create([
+      'name' => $req->input('name'),
+      'email' => $req->input('email'),
+      'password' => Hash::make($req->input('password')),
+      'role' => $req->input('role'),
+      ]);
+      
+    $req->session()->flash('success', 'User added successfully');
+    
+    return redirect()->back();
+  }
 }

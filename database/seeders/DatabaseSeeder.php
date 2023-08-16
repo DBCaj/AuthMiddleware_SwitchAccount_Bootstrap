@@ -12,19 +12,19 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        // $pass = 'anypass123';
-        // User::create([
-        //   'name' => 'Manuel',
-        //   'email' => 'manuel112@gmail.com',
-        //   'password' => Hash::make($pass),
-        //   ]);
+        $pass = 'anypass123';
+        User::create([
+          'name' => 'Manuel',
+          'email' => 'manuel112@gmail.com',
+          'password' => Hash::make($pass),
+          ]);
           
           
-        // User::create([
-        //   'name' => 'John',
-        //   'email' => 'john123@gmail.com',
-        //   'password' => Hash::make('johnpass123'),
-        //   ]);
+        User::create([
+          'name' => 'John',
+          'email' => 'john123@gmail.com',
+          'password' => Hash::make('johnpass123'),
+          ]);
         
         
         User::create([
